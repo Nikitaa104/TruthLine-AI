@@ -1,6 +1,7 @@
 🌐 TruthLens - Real-Time Crisis Misinformation Detector
-<img width="406" height="607" alt="image" src="https://github.com/user-attachments/assets/88f34072-21cd-4a43-bcbd-26f79cefdf64" />
-<img width="1919" height="922" alt="image" src="https://github.com/user-attachments/assets/2d40d861-f3ad-4250-8e16-8441e2c15607" />
+<img width="406" height="608" alt="image" src="https://github.com/user-attachments/assets/a4b7ce38-6da6-4469-a9db-e6c92bc50fca" />
+<img width="1264" height="607" alt="image" src="https://github.com/user-attachments/assets/3bf923b1-fb42-4eb7-9ae0-cea0af67c41a" />
+
 TruthLens is a full-stack MERN (MongoDB, Express, React, Node.js) application that detects and verifies misinformation in real-time during crisis situations. It provides users with verified facts, identifies false claims, and delivers multilingual alerts.
 
 🎯 Features
@@ -28,7 +29,7 @@ Code Editor - VS Code recommended - Download
 🚀 Quick Start
 1. Clone or Extract Project
 bash# If from GitHub
-git clone https://github.com/yourusername/truthlens.git
+git clone <your-repository-url>
 cd truthlens
 
 # If from ZIP
@@ -42,12 +43,8 @@ npm install
 
 # Create .env file
 cp .env.example .env
-# OR create manually and add:
-PORT=5000
-NODE_ENV=development
-MONGODB_URI=mongodb://localhost:27017/truthlens
-JWT_SECRET=your_super_secret_jwt_key_minimum_32_characters_long_2024
-CLIENT_URL=http://localhost:5173
+# Update with your configuration
+See .env.example for all required variables.
 3. Setup Frontend
 bashcd client
 
@@ -56,9 +53,8 @@ npm install
 
 # Create .env file
 cp .env.example .env
-# OR create manually and add:
-VITE_API_URL=http://localhost:5000/api
-VITE_SOCKET_URL=http://localhost:5000
+# Update with your configuration
+See .env.example for all required variables.
 4. Start MongoDB
 Local MongoDB:
 bash# Windows
@@ -164,24 +160,24 @@ WebSocket Events
 EventDirectionDataDescriptioninitialFeedServer → ClientArray of alertsInitial feed on connectionnewUpdateServer → ClientAlert objectNew alert in real-timeconnectClient ← Server-Connection establisheddisconnectClient ← Server-Connection lost
 
 🔐 Environment Variables
-Backend (server/.env)
+Backend (server/.env.example)
 env# Server Configuration
-PORT=5000                          # Server port
-NODE_ENV=development               # Environment (development/production)
+PORT=5000
+NODE_ENV=development
 
 # MongoDB Configuration
-MONGODB_URI=mongodb://localhost:27017/truthlens
-# For MongoDB Atlas: mongodb+srv://user:password@cluster.mongodb.net/truthlens
+MONGODB_URI=your_mongodb_uri
 
 # JWT Configuration
-JWT_SECRET=your_secret_key_minimum_32_characters_long_for_production
+JWT_SECRET=your_jwt_secret_key_minimum_32_characters
 
 # Client Configuration
-CLIENT_URL=http://localhost:5173   # Frontend URL for CORS
-Frontend (client/.env)
+CLIENT_URL=http://localhost:5173
+Frontend (client/.env.example)
 env# API Configuration
-VITE_API_URL=http://localhost:5000/api    # Backend API URL
-VITE_SOCKET_URL=http://localhost:5000     # WebSocket server URL
+VITE_API_URL=http://localhost:5000/api
+VITE_SOCKET_URL=http://localhost:5000
+Important: Never commit .env files to version control. Use .env.example as a template for configuration.
 
 🧪 User Flow
 
@@ -335,13 +331,14 @@ git push origin main
 Environment Variables for Production
 env# Backend
 NODE_ENV=production
-MONGODB_URI=mongodb+srv://user:pass@cluster.mongodb.net/truthlens
-JWT_SECRET=long_secure_key_32_characters_minimum
-CLIENT_URL=http://localhost:5173/
+MONGODB_URI=<your-production-mongodb-uri>
+JWT_SECRET=<your-secure-jwt-secret>
+CLIENT_URL=<your-production-frontend-url>
 
 # Frontend
-VITE_API_URL=http://localhost:5000/api
-VITE_SOCKET_URL=http://localhost:5000
+VITE_API_URL=<your-production-api-url>/api
+VITE_SOCKET_URL=<your-production-api-url>
+Important: Use strong, unique secrets in production. Never commit sensitive data to version control.
 
 📊 Mock Data Generator
 The application includes a fake data generator for testing:
@@ -393,7 +390,7 @@ Email: pandeynikita190@gmail.com
 
 
 📞 Support
-For support, email support@truthlens.com or open an issue on GitHub.
+For support, open an issue on GitHub or contact the project maintainers.
 
 🙏 Acknowledgments
 
